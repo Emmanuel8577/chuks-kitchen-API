@@ -4,6 +4,9 @@ A robust, production-ready backend solution for Chuks Kitchen, a digital food or
 🚀 Live Demo
 API Base URL: https://chuks-kitchen-api.onrender.com (Replace with your actual link)
 
+The Flow Diagram of the project
+![System Architecture](https://app.eraser.io/workspace/YrU7uzav8ZArKvaFTZFi?origin=share).
+
 🛠 Features
 1. User Authentication & Access Flow
 OTP Verification: Secure email-based registration using Nodemailer and 6-digit One-Time Passwords with a 10-minute expiry window.
