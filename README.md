@@ -4,8 +4,8 @@ A robust, production-ready backend solution for Chuks Kitchen, a digital food or
 🚀 Live Demo
 API Base URL: https://chuks-kitchen-api.onrender.com (Replace with your actual link)
 
-The Flow Diagram of these project
-![System Architecture](https://app.eraser.io/workspace/YrU7uzav8ZArKvaFTZFi?origin=share).
+### 🏗️ System Architecture
+The system design and request flow can be viewed here: [Eraser.io Diagram](https://app.eraser.io/workspace/YrU7uzav8ZArKvaFTZFi?origin=share)
 
 🛠 Features
 1. User Authentication & Access Flow
