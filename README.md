@@ -2,7 +2,7 @@ Chuks Kitchen API 👨‍🍳
 A robust, production-ready backend solution for Chuks Kitchen, a digital food ordering platform. This project implements secure user authentication, role-based access control, and a high-integrity ordering system designed to handle the complexities of a modern food delivery business.
 
 🚀 Live Demo
-API Base URL: https://chuks-kitchen-api.onrender.com (Replace with your actual link)
+API Base URL: https://chuks-kitchen-api.onrender.com 
 
 ### 🏗️ System Architecture
 The system design and request flow can be viewed here: [Eraser.io Diagram](https://app.eraser.io/workspace/YrU7uzav8ZArKvaFTZFi?origin=share)
