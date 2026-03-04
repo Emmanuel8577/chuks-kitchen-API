@@ -153,7 +153,9 @@ export const resendOTP = async (req, res) => {
     await user.save();
 
     // Send the new email
-    await sendOTPByEmail(user.email, newOtp, user.name);
+    sendOTPByEmail(user.email, newOtp, user.name).catch((err) => {
+      console.error("Resend email failed:", err.message);
+    });
 
     res.status(200).json({ message: "A new OTP has been sent to your email." });
   } catch (error) {
