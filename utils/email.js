@@ -2,16 +2,17 @@ import nodemailer from "nodemailer";
 
 export const sendOTPByEmail = async (email, otp, name) => {
   // 1. Create a transporter (using Gmail for this example)
- const transporter = nodemailer.createTransport({
-  service: "gmail",
-  host: "smtp.gmail.com",
-  port: 465, // Changed from 587
-  secure: true, // true for 465, false for other ports
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    family: 4, 
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
 
   // 2. Define the email content
   const mailOptions = {

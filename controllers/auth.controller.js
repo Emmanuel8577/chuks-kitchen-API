@@ -23,8 +23,9 @@ export const signup = async (req, res) => {
   const { email, password, name, referralCode } = req.body;
   try {
     const userExists = await User.findOne({ email });
-    if (userExists)
+    if (userExists) {
       return res.status(400).json({ message: "User already exists" });
+    }
 
     // Generate 6-digit OTP
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
@@ -39,17 +40,19 @@ export const signup = async (req, res) => {
       referralCode,
     });
 
-    // --- NEW: Send the actual email ---
-    await sendOTPByEmail(user.email, otp, user.name);
+    // Send the email in the background (no 'await')
+    sendOTPByEmail(user.email, otp, user.name).catch((err) => {
+      console.error("Email service failed but user was created:", err.message);
+    });
 
-    res.status(201).json({
+    // Send success immediately to Postman
+    return res.status(201).json({
       message: "Registration successful. Please check your email for the OTP.",
     });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 };
-
 // @desc    Verify OTP and log user in
 export const verifyEmail = async (req, res) => {
   const { email, otp } = req.body;
